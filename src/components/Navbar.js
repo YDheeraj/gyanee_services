@@ -14,7 +14,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full top-0 z-50 bg-transparent">
+    <nav className="fixed w-full top-0 z-50 bg-white/10 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Hamburger Menu - Left Side */}
@@ -29,7 +29,6 @@ const Navbar = () => {
           {/* Logo - Center/Left */}
           <div className="flex items-center">
             <span className="text-2xl md:text-3xl font-bold text-yellow-400">GYANEE</span>
-            <span className="text-xs md:text-sm text-white ml-2 tracking-wider">SERVICES</span>
           </div>
 
           {/* Right Side Items */}

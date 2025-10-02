@@ -1,8 +1,13 @@
 import HeroSection from "@/components/HeroSection";
+import ServicesSlider from "@/components/ServicesSlider";
+import WhyChooseUs from "@/components/WhyChooseUs";
 
 export default function Home() {
   return (
-    // <></>
-    <HeroSection></HeroSection>
+    <>
+      <HeroSection></HeroSection>
+      <WhyChooseUs></WhyChooseUs>
+      <ServicesSlider></ServicesSlider>
+    </>
   );
 }
