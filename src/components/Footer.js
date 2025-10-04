@@ -8,9 +8,9 @@ export default function Footer() {
         {/* Logo */}
         <div className="flex flex-col justify-center">
           <img
-            src="/path-to-your-logo.png"
+            src="/images/logo.png"
             alt="Gyanee Services Logo"
-            className="h-16 mb-6 md:mb-0"
+            className="h-50 mb-6 md:mb-0"
           />
         </div>
 

@@ -105,6 +105,7 @@ export default function AppointmentForm({ onClose }) {
             type="date"
             name="date"
             className="border p-2 rounded"
+            defaultValue={new Date().toISOString().split('T')[0]}
             required
           />
 

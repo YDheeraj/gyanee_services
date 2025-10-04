@@ -91,16 +91,22 @@ const ServicesSlider = () => {
           </button>
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mt-12">
-          <Link href="/services" passHref>
-            <button className="px-6 py-3 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-md hover:bg-yellow-400 hover:text-gray-900 transition">
-              View All Services
-            </button>
-          </Link>
-          <button onClick={() => setIsAppointmentOpen(true)} className="px-6 py-3 bg-yellow-400 text-gray-900 font-semibold rounded-md hover:bg-yellow-500 transition">
-            Enquire Now
-          </button>
-        </div>
+<div className="flex flex-col sm:flex-row justify-center gap-4 mt-12">
+  <Link href="/services" passHref>
+    <button className="w-full sm:w-48 px-6 py-3 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-md hover:bg-yellow-400 hover:text-gray-900 transition">
+      View All Services
+    </button>
+  </Link>
+  <button
+    onClick={() => setIsAppointmentOpen(true)}
+    className="w-full sm:w-48 px-6 py-3 bg-yellow-400 text-gray-900 font-semibold rounded-md hover:bg-yellow-500 transition"
+  >
+    Enquire Now
+  </button>
+</div>
+
+
+
       </div>
 
       {/* Additional style to hide scrollbar on Webkit browsers */}

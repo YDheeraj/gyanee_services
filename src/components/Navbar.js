@@ -10,7 +10,6 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isAppointmentOpen, setIsAppointmentOpen] = useState(false);
 
-  // Detect scroll to change navbar style
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -20,13 +19,8 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Prevent body scroll when menu is open
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+    document.body.style.overflow = isMenuOpen ? 'hidden' : '';
   }, [isMenuOpen]);
 
   const navLinks = [
@@ -38,31 +32,28 @@ const Navbar = () => {
 
   return (
     <>
-      <nav
-        className={`fixed w-full top-0 z-50 transition-colors duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
-          }`}
-      >
+      <nav className={`fixed w-full top-0 z-50 transition-colors duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            {/* Hamburger Menu - Left Side */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`transition-colors ${isScrolled ? 'text-yellow-400' : 'text-white'
-                } hover:text-yellow-400 `}
-              aria-label="Menu"
-            >
-              {isMenuOpen ? <X size={32} /> : <Menu size={32} />}
-            </button>
+            {/* Left Side: Burger Menu + Logo */}
+            <div className="flex items-center space-x-3">
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className={`transition-colors ${isScrolled ? 'text-yellow-400' : 'text-white'} hover:text-yellow-400`}
+                aria-label="Menu"
+              >
+                {isMenuOpen ? <X size={32} /> : <Menu size={32} />}
+              </button>
 
-            {/* Logo */}
-            <div className="flex items-center">
-              <span className="text-2xl md:text-3xl font-bold text-yellow-400">GYANEE</span>
+              <Link href="/">
+                <span className="text-2xl md:text-3xl font-bold text-yellow-400 cursor-pointer">
+                  GYANEE
+                </span>
+              </Link>
             </div>
 
             {/* Right Side (Desktop) */}
             <div className="hidden lg:flex items-center space-x-6">
-
-              {/* Phone Number */}
               <a
                 href="tel:+919616218451"
                 className={`${isScrolled ? 'text-black-400' : 'text-white'} hover:text-yellow-400 transition-colors whitespace-nowrap`}
@@ -70,7 +61,6 @@ const Navbar = () => {
                 +91 - 96162 18451
               </a>
 
-              {/* Divider */}
               <div className="h-6 w-px bg-gray-500"></div>
 
               {/* WhatsApp */}
@@ -85,8 +75,10 @@ const Navbar = () => {
                 </svg>
               </a>
 
-              {/* Book Appointment */}
-              <button onClick={() => setIsAppointmentOpen(true)} className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-6 py-2.5 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg">
+              <button
+                onClick={() => setIsAppointmentOpen(true)}
+                className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-6 py-2.5 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg"
+              >
                 Book Appointment
               </button>
             </div>
@@ -100,10 +92,13 @@ const Navbar = () => {
                 className="text-green-400"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M17.472 14.382...Z" /> {/* Truncated path */}
+                  <path d="M17.472 14.382...Z" />
                 </svg>
               </a>
-              <button onClick={() => setIsAppointmentOpen(true)} className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-2 rounded-lg text-sm font-semibold">
+              <button
+                onClick={() => setIsAppointmentOpen(true)}
+                className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-2 rounded-lg text-sm font-semibold"
+              >
                 Enquire
               </button>
             </div>
@@ -111,19 +106,16 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Overlay */}
+      {/* Overlay when menu is open */}
       {isMenuOpen && (
         <div
-          className="fixed inset-0 z-40 bg-transparent bg-opacity-50 transition-opacity"
+          className="fixed inset-0 z-40 bg-black bg-opacity-50 transition-opacity"
           onClick={() => setIsMenuOpen(false)}
         />
       )}
 
       {/* Slide-in Menu */}
-      <div
-        className={`fixed top-0 left-0 h-full w-72 bg-white z-50 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'
-          }`}
-      >
+      <div className={`fixed top-0 left-0 h-full w-72 bg-white z-50 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="flex justify-between items-center px-4 py-4 border-b border-gray-200">
           <span className="text-xl font-bold text-yellow-500">Menu</span>
           <button
@@ -134,16 +126,22 @@ const Navbar = () => {
             <X size={28} />
           </button>
         </div>
+
         <div className="px-4 py-4 space-y-1">
           {navLinks.map((link) => (
-            <Link href={link.href}>
-              <span className="block px-2 py-3 text-black hover:text-yellow-500 hover:bg-gray-100 rounded-md transition-colors">
+            <Link href={link.href} key={link.name}>
+              <span
+                onClick={() => setIsMenuOpen(false)}
+                className="block px-2 py-3 text-black hover:text-yellow-500 hover:bg-gray-100 rounded-md transition-colors cursor-pointer"
+              >
                 {link.name}
               </span>
             </Link>
           ))}
         </div>
       </div>
+
+      {/* Appointment Form */}
       {isAppointmentOpen && (
         <AppointmentForm onClose={() => setIsAppointmentOpen(false)} />
       )}
