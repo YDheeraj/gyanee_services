@@ -1,7 +1,9 @@
 "use client";
-
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useRef } from 'react';
+import React from 'react';
+import AppointmentForm from './AppointmentForm';
+import Link from 'next/link';
 
 const services = [
   {
@@ -27,6 +29,7 @@ const services = [
 ];
 
 const ServicesSlider = () => {
+  const [isAppointmentOpen, setIsAppointmentOpen] = React.useState(false);
   const scrollRef = useRef(null);
 
   const scroll = (direction) => {
@@ -59,25 +62,25 @@ const ServicesSlider = () => {
             className="flex gap-6 overflow-x-auto scroll-smooth px-2 scrollbar-hide"
             style={{ scrollbarWidth: 'none' /* Firefox */ }}
           >
-{services.map((service, index) => (
-  <div
-    key={index}
-    className="relative min-w-[220px] sm:min-w-[260px] md:min-w-[300px] lg:min-w-[320px] h-56 sm:h-64 md:h-72 rounded-lg overflow-hidden shadow-lg flex-shrink-0"
-  >
-    <img
-      src={service.image}
-      alt={service.title}
-      className="w-full h-full object-cover"
-    />
-    {/* Dark overlay for better readability */}
-    <div className="absolute inset-0 bg-black/3 "></div>
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="relative min-w-[220px] sm:min-w-[260px] md:min-w-[300px] lg:min-w-[320px] h-56 sm:h-64 md:h-72 rounded-lg overflow-hidden shadow-lg flex-shrink-0"
+              >
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover"
+                />
+                {/* Dark overlay for better readability */}
+                <div className="absolute inset-0 bg-black/3 "></div>
 
-    {/* Centered Text */}
-    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white font-semibold text-center text-base sm:text-lg drop-shadow-lg z-10">
-      {service.title}
-    </div>
-  </div>
-))}
+                {/* Centered Text */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white font-semibold text-center text-base sm:text-lg drop-shadow-lg z-10">
+                  {service.title}
+                </div>
+              </div>
+            ))}
           </div>
 
           <button
@@ -89,10 +92,12 @@ const ServicesSlider = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4 mt-12">
-          <button className="px-6 py-3 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-md hover:bg-yellow-400 hover:text-gray-900 transition">
-            View All Services
-          </button>
-          <button className="px-6 py-3 bg-yellow-400 text-gray-900 font-semibold rounded-md hover:bg-yellow-500 transition">
+          <Link href="/services" passHref>
+            <button className="px-6 py-3 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-md hover:bg-yellow-400 hover:text-gray-900 transition">
+              View All Services
+            </button>
+          </Link>
+          <button onClick={() => setIsAppointmentOpen(true)} className="px-6 py-3 bg-yellow-400 text-gray-900 font-semibold rounded-md hover:bg-yellow-500 transition">
             Enquire Now
           </button>
         </div>
@@ -104,6 +109,9 @@ const ServicesSlider = () => {
           display: none;
         }
       `}</style>
+      {isAppointmentOpen && (
+        <AppointmentForm onClose={() => setIsAppointmentOpen(false)} />
+      )}
     </section>
   );
 };

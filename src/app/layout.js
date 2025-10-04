@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import FloatingActions from "@/components/FloatingActions";
 
 export const metadata = {
   title: "Ariska Services",
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
       <body>
         <Navbar />
         <main className="min-h-screen">{children}</main>
+        <FloatingActions></FloatingActions>
         <Footer />
       </body>
     </html>

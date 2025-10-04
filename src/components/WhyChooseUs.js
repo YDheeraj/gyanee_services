@@ -1,6 +1,12 @@
+"use client";
 import { Clock, UserCheck, TrendingUp } from 'lucide-react'; // or any icon lib
+import React, { useState } from 'react';
+import AppointmentForm from './AppointmentForm';
 
 const WhyChooseUs = () => {
+
+  const [isAppointmentOpen, setIsAppointmentOpen] = useState(false);
+
   const features = [
     {
       icon: <Clock className="w-6 h-6 text-white" />,
@@ -50,7 +56,7 @@ const WhyChooseUs = () => {
 
         {/* Button */}
         <div className="mt-12">
-          <button className="bg-transparent border-2 border-yellow-400 text-yellow-500 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-400 hover:text-white transition-all duration-300 flex items-center gap-2 mx-auto">
+          <button onClick={() => setIsAppointmentOpen(true)} className="bg-transparent border-2 border-yellow-400 text-yellow-500 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-400 hover:text-white transition-all duration-300 flex items-center gap-2 mx-auto">
             Book Appointment Now
             <svg
               className="w-5 h-5 transition-transform group-hover:translate-x-1"
@@ -63,6 +69,9 @@ const WhyChooseUs = () => {
           </button>
         </div>
       </div>
+      {isAppointmentOpen && (
+        <AppointmentForm onClose={() => setIsAppointmentOpen(false)} />
+      )}
     </section>
   );
 };

@@ -2,10 +2,12 @@
 
 import React, { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import AppointmentForm from './AppointmentForm';
 
 const HeroSection = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [cardsPerView, setCardsPerView] = useState(4); // default desktop
+    const [isAppointmentOpen, setIsAppointmentOpen] = useState(false);
 
     useEffect(() => {
         const updateCardsPerView = () => {
@@ -55,39 +57,6 @@ const HeroSection = () => {
             ),
             title: 'Carpenter',
             subtitle: 'Service'
-        },
-        {
-            icon: (
-                <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M7 17h10M5 21h14M12 3v4M5.8 9h12.4a1 1 0 0 1 .8.4l1.5 2a1 1 0 0 1 .2.6v4a2 2 0 0 1-2 2H5.5a2 2 0 0 1-2-2v-4a1 1 0 0 1 .2-.6l1.5-2a1 1 0 0 1 .8-.4z" />
-                    <circle cx="8" cy="17" r="2" />
-                    <circle cx="16" cy="17" r="2" />
-                </svg>
-            ),
-            title: 'Car Mechanic',
-            subtitle: ''
-        },
-        {
-            icon: (
-                <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M7 17h10M5 21h14M12 3v4M5.8 9h12.4a1 1 0 0 1 .8.4l1.5 2a1 1 0 0 1 .2.6v4a2 2 0 0 1-2 2H5.5a2 2 0 0 1-2-2v-4a1 1 0 0 1 .2-.6l1.5-2a1 1 0 0 1 .8-.4z" />
-                    <circle cx="8" cy="17" r="2" />
-                    <circle cx="16" cy="17" r="2" />
-                </svg>
-            ),
-            title: 'Car Mechanic',
-            subtitle: ''
-        },
-        {
-            icon: (
-                <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M7 17h10M5 21h14M12 3v4M5.8 9h12.4a1 1 0 0 1 .8.4l1.5 2a1 1 0 0 1 .2.6v4a2 2 0 0 1-2 2H5.5a2 2 0 0 1-2-2v-4a1 1 0 0 1 .2-.6l1.5-2a1 1 0 0 1 .8-.4z" />
-                    <circle cx="8" cy="17" r="2" />
-                    <circle cx="16" cy="17" r="2" />
-                </svg>
-            ),
-            title: 'Car Mechanic',
-            subtitle: ''
         }
     ];
 
@@ -134,14 +103,14 @@ const HeroSection = () => {
                         {/* Services Cards Container */}
                         <div className="relative">
                             {/* Left Arrow – hidden on mobile */}
-                            <button
+                            {/* <button
                                 onClick={prevSlide}
                                 disabled={currentSlide === 0}
                                 className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 hover:bg-opacity-30 backdrop-blur-sm rounded-full p-2 transition-all disabled:opacity-30"
                                 aria-label="Previous service"
                             >
                                 <ChevronLeft className="w-6 h-6 text-white" />
-                            </button>
+                            </button> */}
 
                             {/* Slider */}
                             <div className="overflow-hidden mb-12">
@@ -159,9 +128,6 @@ const HeroSection = () => {
                                                 <div className="text-gray-800 mb-4 text-3xl sm:text-2xl xs:text-xl">
                                                     {service.icon}
                                                 </div>
-                                                <h3 className="text-lg sm:text-base xs:text-sm font-bold text-gray-900 mb-1">
-                                                    {service.title}
-                                                </h3>
                                                 {service.subtitle && (
                                                     <p className="text-sm sm:text-xs xs:text-[10px] text-gray-600">
                                                         {service.subtitle}
@@ -174,18 +140,18 @@ const HeroSection = () => {
                             </div>
 
                             {/* Right Arrow – hidden on mobile */}
-                            <button
+                            {/* <button
                                 onClick={nextSlide}
                                 disabled={currentSlide + cardsPerView >= services.length}
                                 className="hidden md:flex absolute right-0 top-1/2 translate-x-4 -translate-y-1/2 z-20 hover:bg-opacity-30 backdrop-blur-sm rounded-full p-2 transition-all disabled:opacity-30"
                                 aria-label="Next service"
                             >
                                 <ChevronRight className="w-6 h-6 text-white" />
-                            </button>
+                            </button> */}
                         </div>
 
                         {/* Book Appointment Button */}
-                        <button className="bg-transparent border-2 border-yellow-400 text-yellow-400 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-400 hover:text-gray-900 transition-all duration-300 flex items-center gap-2 group mx-auto lg:mx-0">
+                        <button onClick={() => setIsAppointmentOpen(true)} className="bg-transparent border-2 border-yellow-400 text-yellow-400 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-400 hover:text-gray-900 transition-all duration-300 flex items-center gap-2 group mx-auto lg:mx-0">
                             Book Appointment Now
                             <svg
                                 className="w-5 h-5 group-hover:translate-x-1 transition-transform"
@@ -200,6 +166,9 @@ const HeroSection = () => {
                 </div>
 
             </div>
+                  {isAppointmentOpen && (
+                    <AppointmentForm onClose={() => setIsAppointmentOpen(false)} />
+                  )}
         </section>
     );
 };
