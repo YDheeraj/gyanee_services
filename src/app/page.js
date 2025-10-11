@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <HeroSection></HeroSection>
       <WhyChooseUs></WhyChooseUs>
-      <ServicesSlider></ServicesSlider>
+      {/* <ServicesSlider></ServicesSlider> */}
     </>
   );
 }

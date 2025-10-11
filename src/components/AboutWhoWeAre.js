@@ -4,7 +4,7 @@ const AboutWhoAreWe = () => {
   return (
     <section className="bg-white py-12 px-4 sm:px-6 lg:px-16">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-        
+
         {/* Images Section */}
         <div className="space-y-6 order-2 lg:order-1">
           {/* Top Large Image with Badge */}
@@ -14,8 +14,8 @@ const AboutWhoAreWe = () => {
               alt="Technician fixing AC"
               className="w-full h-auto object-cover"
             />
-            <div className="absolute bottom-0 left-0 bg-gradient-to-r from-sky-500 to-blue-600 text-white p-4 rounded-tr-lg">
-              <div className="text-3xl font-bold">6</div>
+            <div className="absolute bottom-0 left-0 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white p-4 rounded-tr-lg">
+              <div className="text-3xl font-bold">5</div>
               <div className="text-sm font-light leading-tight">
                 Years of<br />excellence
               </div>
@@ -51,30 +51,30 @@ const AboutWhoAreWe = () => {
           </h2>
 
           <p className="text-gray-700 text-base sm:text-lg mb-4 text-center lg:text-left">
-            At Ariska, we know that home appliances are the heartbeat of your daily life. When they stop working, life slows down. That’s why we’ve dedicated ourselves to providing fast, reliable, and personalized at-door repair services. We restore the rhythm of your home, bringing comfort and ease back to your everyday routine.
+            At Ariska, we are your trusted partner for all kinds of <strong>kitchen, electrical, power, solar, and home appliances</strong>. We not only provide top-quality products but also ensure reliable services that keep your home running smoothly. Our mission is to bring innovation, efficiency, and comfort to every household we serve.
           </p>
 
           <p className="text-gray-700 text-base sm:text-lg mb-4 text-center lg:text-left">
-            Our team of highly trained technicians arrives promptly at your doorstep, equipped with the skills and tools to handle a wide range of issues across almost every brand. Be it anything, we’ve got the knowledge and experience to get the job done right, the first time.
+            From <strong>kitchen essentials</strong> like induction cooktops, chimneys, LPG stoves, hobs, kettles, and mixer grinders to <strong>power electronics</strong> such as inverters, batteries, stabilizers, UPS systems, and solar panels we deliver everything you need under one roof. We also handle <strong>AC servicing, plumbing, wiring, and installation</strong> for all major home appliances.
           </p>
 
           <p className="text-gray-700 text-base sm:text-lg mb-6 text-center lg:text-left">
-            We take immense pride in our work. Our technicians are passionate about delivering service that goes above and beyond expectations. We understand that your appliances are an investment, and we treat them with the care and respect they deserve. With Ariska, you can trust that every repair is handled with precision.
+            Our team takes pride in offering <strong>complete sales and service solutions</strong> with professionalism and care. Whether it’s a repair, installation, or a new appliance purchase, we’re here to ensure your experience is smooth and satisfying. With Ariska, your home is always in good hands.
           </p>
 
           {/* Stats Section */}
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-y-6 gap-x-10 text-center sm:text-left">
-            <div className="flex-1 min-w-[100px]">
+            {/* <div className="flex-1 min-w-[100px]">
               <div className="text-xl sm:text-2xl font-bold">400+</div>
               <div className="text-sm text-gray-600">Google Reviews</div>
-            </div>
+            </div> */}
             <div className="flex-1 min-w-[100px]">
-              <div className="text-xl sm:text-2xl font-bold">4000+</div>
+              <div className="text-xl sm:text-2xl font-bold">1000+</div>
               <div className="text-sm text-gray-600">Happy Customers</div>
             </div>
             <div className="flex-1 min-w-[100px]">
-              <div className="text-xl sm:text-2xl font-bold">6+</div>
-              <div className="text-sm text-gray-600">of experience</div>
+              <div className="text-xl sm:text-2xl font-bold">5+</div>
+              <div className="text-sm text-gray-600">Years of experience</div>
             </div>
           </div>
         </div>

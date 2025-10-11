@@ -26,16 +26,16 @@ const ServiceCard = () => {
               <FaMapMarkerAlt className="text-yellow-500 text-xl" />
             </div>
             <p className="text-gray-600 max-w-xs">
-              Pillar no. 58, Badshahpur Sohna Rd Hwy, near Vatika chowk, Sector 69, Gurugram, Haryana 122102
+              Lohia Talab WardNo.2, H.No.1349, Putlighar, Mirzapur, Uttar Pradesh, 231001
             </p>
           </div>
 
           {/* Phone */}
           <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4">
-            <div className="border-2 border-yellow-500 rounded-full p-3 mb-2">
+            <div className="border-2 border-yellow-500 rounded-full p-3 mb-2 lg:mb-0">
               <FaPhoneAlt className="text-yellow-500 text-xl" />
             </div>
-            <p className="text-gray-700">+91 - 92117 45950</p>
+            <p className="text-gray-700 text-center lg:text-left lg:mt-4">+91 - 78971 25865</p>
           </div>
 
           {/* Email */}
@@ -45,12 +45,13 @@ const ServiceCard = () => {
             </div>
             <a
               href="mailto:info@gyaneeservices.in"
-              className="text-gray-700 hover:text-yellow-600"
+              className="text-gray-700 hover:text-yellow-600 lg:mt-4"
             >
-              info@gyaneeservices.in
+              gy9453servicesh@gmail.com
             </a>
           </div>
         </div>
+
 
         {/* Buttons */}
         <div className="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-4 max-w-md mx-auto lg:mx-0">

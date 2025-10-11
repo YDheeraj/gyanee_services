@@ -9,17 +9,17 @@ const WhyChooseUs = () => {
 
   const features = [
     {
-      icon: <Clock className="w-6 h-6 text-white" />,
+      icon: <Clock className="w-6 h-6 text-black" />,
       title: "Customer Satisfaction",
       description: "We prioritize your needs, ensuring every job is done to your complete satisfaction.",
     },
     {
-      icon: <UserCheck className="w-6 h-6 text-white" />,
+      icon: <UserCheck className="w-6 h-6 text-black" />,
       title: "Trained Professionals",
       description: "Our skilled experts deliver top-notch service with precision and care.",
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-white" />,
+      icon: <TrendingUp className="w-6 h-6 text-black" />,
       title: "Low Cost Charges",
       description: "Enjoy high-quality service at affordable rates without any hidden fees.",
     },
@@ -56,16 +56,8 @@ const WhyChooseUs = () => {
 
         {/* Button */}
         <div className="mt-12">
-          <button onClick={() => setIsAppointmentOpen(true)} className="bg-transparent border-2 border-yellow-400 text-yellow-500 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-400 hover:text-white transition-all duration-300 flex items-center gap-2 mx-auto">
+          <button onClick={() => setIsAppointmentOpen(true)} className="bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-600 hover:text-black transition-all duration-300 flex items-center gap-2 mx-auto">
             Book Appointment Now
-            <svg
-              className="w-5 h-5 transition-transform group-hover:translate-x-1"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
           </button>
         </div>
       </div>

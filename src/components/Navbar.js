@@ -39,14 +39,14 @@ const Navbar = () => {
             <div className="flex items-center space-x-3">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className={`transition-colors ${isScrolled ? 'text-yellow-400' : 'text-white'} hover:text-yellow-400`}
+                className={`transition-colors ${isScrolled ? 'text-black' : 'text-white'} hover:text-yellow-400`}
                 aria-label="Menu"
               >
                 {isMenuOpen ? <X size={32} /> : <Menu size={32} />}
               </button>
 
               <Link href="/">
-                <span className="text-2xl md:text-3xl font-bold text-yellow-400 cursor-pointer">
+                <span className="text-2xl md:text-3xl font-bold text-yellow-600 cursor-pointer">
                   GYANEE
                 </span>
               </Link>
@@ -55,17 +55,18 @@ const Navbar = () => {
             {/* Right Side (Desktop) */}
             <div className="hidden lg:flex items-center space-x-6">
               <a
-                href="tel:+919616218451"
+                href="tel:+917897125865"
+                // href="tel:+919616218451"
                 className={`${isScrolled ? 'text-black-400' : 'text-white'} hover:text-yellow-400 transition-colors whitespace-nowrap`}
               >
-                +91 - 96162 18451
+                +91 - 78971 25865
               </a>
 
               <div className="h-6 w-px bg-gray-500"></div>
 
               {/* WhatsApp */}
               <a
-                href="https://wa.me/919616218451"
+                href="https://wa.me/917897125865"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-green-400 hover:text-green-300 transition-colors"
@@ -86,7 +87,7 @@ const Navbar = () => {
             {/* Mobile Right Side */}
             <div className="flex lg:hidden items-center space-x-3">
               <a
-                href="https://wa.me/919616218451"
+                href="https://wa.me/917897125865"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-green-400"
@@ -109,7 +110,7 @@ const Navbar = () => {
       {/* Overlay when menu is open */}
       {isMenuOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black bg-opacity-50 transition-opacity"
+          className="fixed inset-0 z-40 bg-black/50 transition-opacity"
           onClick={() => setIsMenuOpen(false)}
         />
       )}
@@ -117,7 +118,7 @@ const Navbar = () => {
       {/* Slide-in Menu */}
       <div className={`fixed top-0 left-0 h-full w-72 bg-white z-50 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="flex justify-between items-center px-4 py-4 border-b border-gray-200">
-          <span className="text-xl font-bold text-yellow-500">Menu</span>
+          <span className="text-xl font-bold text-yellow-600">Menu</span>
           <button
             onClick={() => setIsMenuOpen(false)}
             className="text-black hover:text-yellow-500"

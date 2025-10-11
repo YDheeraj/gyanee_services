@@ -1,68 +1,24 @@
-import React from "react";
-import AppointmentForm from "./AppointmentForm";
-export default function ServiceCards() {
-  const [isAppointmentOpen, setIsAppointmentOpen] = React.useState(false);
-  const services = [
-    {
-      title: "Air Conditioner Repair",
-      imageUrl: "/images/air-conditioner.png",
-      link: "/service/air-conditioner-repair",
-    },
-    {
-      title: "Refrigerator Repair",
-      imageUrl: "/images/fridge.jpg",
-      link: "/service/refrigerator-repair",
-    },
-    {
-      title: "Washing Machine Repair",
-      imageUrl: "/images/washing_machine.jpg",
-      link: "/service/washing-machine-repair",
-    },
-    {
-      title: "Microwave Repair",
-      imageUrl: "/images/air-conditioner.png",
-      link: "/service/microwave-repair",
-    },
-    {
-      title: "Dishwasher Repair",
-      imageUrl: "/images/air-conditioner.png",
-      link: "/service/dishwasher-repair",
-    },
-    {
-      title: "Water Purifier Repair",
-      imageUrl: "/images/fridge.jpg",
-      link: "/service/water-purifier-repair",
-    },
-  ];
+import Link from "next/link";
 
+export default function ServiceCard({ title, description, image, link }) {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-10">
-      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
-        {services.map(({ title, imageUrl, link }) => (
-          <div onClick={() => setIsAppointmentOpen(true)}
-            className="relative block h-56 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
-          >
-          {/* <a onClick={() => setIsAppointmentOpen(true)}
-            key={title}
-            href={link}
-          > */}
-            <img 
-              src={imageUrl}
-              alt={title}
-              className="w-full h-full object-cover object-center"
-            />
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-              <h3 className="text-white font-semibold text-lg px-3 text-center">
-                {title}
-              </h3>
-            </div>
-          {/* </a> */}
-          </div>
-        ))}
+    <Link
+      href={link}
+      className="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group flex flex-col h-full"
+    >
+      <div className="h-48 sm:h-56 w-full flex-shrink-0">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        />
       </div>
-      {isAppointmentOpen && (
-        <AppointmentForm onClose={() => setIsAppointmentOpen(false)} />
-      )}
-    </div>
+
+      {/* Text Overlay at Bottom */}
+      <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4 sm:p-6">
+        <h3 className="text-white text-lg font-semibold">{title}</h3>
+        <p className="text-gray-200 text-sm mt-1">{description}</p>
+      </div>
+    </Link>
   );
 }

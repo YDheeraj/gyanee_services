@@ -7,7 +7,7 @@ const FloatingActions = () => {
         <div className="fixed bottom-4 right-4 z-50 flex flex-col space-y-3 lg:hidden">
             {/* WhatsApp */}
             <a
-                href="https://wa.me/919616218451"
+                href="https://wa.me/917897125865"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 flex items-center justify-center rounded-full shadow-lg
@@ -22,7 +22,7 @@ const FloatingActions = () => {
 
             {/* Phone Call */}
             <a
-                href="tel:+919616218451"
+                href="tel:+917897125865"
                 className="w-12 h-12 flex items-center justify-center rounded-full shadow-lg
                            backdrop-blur-md bg-white/30 border border-white/20
                            hover:bg-white/40 transition-all duration-200"
