@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import FloatingActions from "@/components/FloatingActions";
 
 export const metadata = {
-  title: "Ariska Services",
+  title: "Gyanee Services",
   description: "Expert home appliance repair services at your door",
 };
 

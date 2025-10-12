@@ -39,16 +39,18 @@ const Navbar = () => {
             <div className="flex items-center space-x-3">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className={`transition-colors ${isScrolled ? 'text-black' : 'text-white'} hover:text-yellow-400`}
+                className={`transition-colors ${isScrolled ? 'text-black' : 'text-yellow-400'} hover:text-yellow-400`}
                 aria-label="Menu"
               >
                 {isMenuOpen ? <X size={32} /> : <Menu size={32} />}
               </button>
 
               <Link href="/">
-                <span className="text-2xl md:text-3xl font-bold text-yellow-600 cursor-pointer">
-                  GYANEE
-                </span>
+                <img
+                  src={isScrolled ? "/images/logo_dark.png" : "/images/logo_light.png"}
+                  alt="Logo"
+                  className="w-32 h-auto" // Adjust the size of the logo as needed
+                />
               </Link>
             </div>
 
