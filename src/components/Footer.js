@@ -27,6 +27,9 @@ export default function Footer() {
             <li>
               <Link href="/aboutus" className="hover:underline">About Us</Link>
             </li>
+            <li>
+              <Link href="/contactus" className="hover:underline">Get In Touch</Link>
+            </li>
           </ul>
         </div>
 
@@ -35,22 +38,22 @@ export default function Footer() {
           <h3 className="font-semibold mb-4">Services</h3>
           <ul className="space-y-2">
             <li>
-              <Link href="/services" className="hover:underline">
+              <Link href="/services/kitchen-appliances" className="hover:underline">
                 Kitchen Appliances
               </Link>
             </li>
             <li>
-              <Link href="/services" className="hover:underline">
+              <Link href="/services/power-electronics" className="hover:underline">
                 Power Electronics
               </Link>
             </li>
             <li>
-              <Link href="/services" className="hover:underline">
+              <Link href="/services/electrical-appliances" className="hover:underline">
                 Electrical Appliances
               </Link>
             </li>
             <li>
-              <Link href="/services" className="hover:underline">
+              <Link href="/services/plumbing-home" className="hover:underline">
                 Plumbing & Home
               </Link>
             </li>
@@ -69,14 +72,14 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <FaPhone />
-              <a href="tel:09211745950" className="hover:underline">
+              <a href="tel:78971 25865" className="hover:underline">
                 78971 25865
               </a>
             </li>
             <li className="flex items-center gap-2">
               <FaEnvelope />
-              <a href="mailto:gy9453servicesh@gmail.com" className="hover:underline">
-                gy9453servicesh@gmail.com
+              <a href="mailto:support@gyaneeservices.com" className="hover:underline">
+                support@gyaneeservices.com
               </a>
             </li>
           </ul>

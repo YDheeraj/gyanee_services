@@ -44,10 +44,10 @@ const ServiceCard = () => {
               <FaEnvelope className="text-yellow-500 text-xl" />
             </div>
             <a
-              href="mailto:info@gyaneeservices.in"
+              href="mailto:support@gyaneeservices.com"
               className="text-gray-700 hover:text-yellow-600 lg:mt-4"
             >
-              gy9453servicesh@gmail.com
+              support@gyaneeservices.com
             </a>
           </div>
         </div>
@@ -56,7 +56,7 @@ const ServiceCard = () => {
         {/* Buttons */}
         <div className="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-4 max-w-md mx-auto lg:mx-0">
           <a
-            href="https://www.google.com/maps?q=28.405808,77.04374"
+            href="https://maps.app.goo.gl/Gc5Y72NeedFpc7vG8"
             className="w-full bg-transparent border-2 border-yellow-400 text-yellow-400 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-400 hover:text-gray-900 transition-all duration-300 flex items-center justify-center gap-2"
             target="_blank"
             rel="noopener noreferrer"
@@ -64,7 +64,7 @@ const ServiceCard = () => {
             View Location Map
           </a>
           <a
-            href="https://wa.me/919616218451"
+            href="https://wa.me/917897125865"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full bg-yellow-400 text-black px-8 py-3 rounded-lg font-semibold flex items-center justify-center"
