@@ -96,10 +96,10 @@ export default function AppointmentForm({ onClose }) {
           />
           <select name="service" className="border p-2 rounded" required>
             <option value="">Select Service</option>
-            <option>Air Conditioner Repair</option>
-            <option>Refrigerator Repair</option>
-            <option>Washing Machine Repair</option>
-            <option>Microwave Repair</option>
+            <option>Kitchen Appliances (Chimney, Hob, Mixer, Induction, Oven)</option>
+            <option>Power Electronics (Inverter, Battery, Solar Panel, UPS, Voltage Stabilizer)</option>
+            <option>Plumbing & Home (Pipework, AC Service, Heat Pump, Washing Machine, Water Heater)</option>
+            <option>Electrical Appliances (Ceiling Fans, Table Fans, Electric Kettle, Water Pump, Heater)</option>
           </select>
           <input
             type="date"
