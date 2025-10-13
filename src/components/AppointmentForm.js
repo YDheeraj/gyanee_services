@@ -12,6 +12,14 @@ export default function AppointmentForm({ onClose }) {
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
 
+
+    const phoneRegex = /^[6-9]\d{9}$/;
+    if (!phoneRegex.test(data.phone)) {
+      alert("⚠️ Please enter a valid 10-digit phone number.");
+      setLoading(false);
+      return;
+    }
+
     try {
       const response = await fetch("/api/submit", {
         method: "POST",
@@ -92,7 +100,6 @@ export default function AppointmentForm({ onClose }) {
             name="email"
             placeholder="Email"
             className="border p-2 rounded"
-            required
           />
           <select name="service" className="border p-2 rounded" required>
             <option value="">Select Service</option>
@@ -100,6 +107,7 @@ export default function AppointmentForm({ onClose }) {
             <option>Power Electronics (Inverter, Battery, Solar Panel, UPS, Voltage Stabilizer)</option>
             <option>Plumbing & Home (Pipework, AC Service, Heat Pump, Washing Machine, Water Heater)</option>
             <option>Electrical Appliances (Ceiling Fans, Table Fans, Electric Kettle, Water Pump, Heater)</option>
+            <option>Sales Requirement</option>
           </select>
           <input
             type="date"
@@ -108,7 +116,12 @@ export default function AppointmentForm({ onClose }) {
             defaultValue={new Date().toISOString().split('T')[0]}
             required
           />
-
+          {/* New Remark Input Field */}
+          <textarea
+            name="remark"
+            placeholder="Add any remarks"
+            className="border p-2 rounded h-24"
+          />
           <button
             type="submit"
             className="bg-yellow-500 text-white p-2 rounded font-semibold hover:bg-yellow-400 transition flex items-center justify-center gap-2"
